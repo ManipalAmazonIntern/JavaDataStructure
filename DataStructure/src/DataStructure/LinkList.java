@@ -3,9 +3,12 @@
  * @date Created    17-11-2014
  * @IDE used        NetBeans IDE 8.0.1
  */
+/*
+ * Change Log: Added Generic Class for LinkList
+*/
 package DataStructure;
 
-public class LinkList
+public class LinkList<T>
 {
     public Node root; 
     public Node last;
@@ -15,18 +18,18 @@ public class LinkList
         last = null;
     }
     
-    public LinkList(int... values)
+    public LinkList(T... values)
     {
         root = null;
         last = null;
-        for(int val:values)
+        for(T val:values)
         {
             push_back(val);
         }
     }
-    final public void push_back(int... values)
+    final public void push_back(T... values)
     {
-        for(int val:values)
+        for(T val:values)
         {
             if(root == null && last == null)
             {
@@ -46,9 +49,9 @@ public class LinkList
         }
     }
     
-    public void push_front(int... values)
+    public void push_front(T... values)
     {
-         for(int val:values)
+         for(T val:values)
          {
              if(root == null && last == null)
             {

@@ -4,11 +4,21 @@
  * @date Created    17-11-2014
  * @IDE used        NetBeans IDE 8.0.1
  */
+ /*
+  * Using treeNode instead of Generic Node, Since BST may not work.
+*/
 package DataStructure;
+
+class treeNode
+{
+    public double value;
+    treeNode next;
+    treeNode prev;
+}
 
 public class BinarySearchTree {
     
-    public Node root;
+    treeNode root;
 
     public BinarySearchTree() {
         root = null;
@@ -33,11 +43,11 @@ public class BinarySearchTree {
     {
         postOrder(this.root);
     }
-    private void push_value(Node p, int val)
+    private void push_value(treeNode p, int val)
     {
         if(root == null)
         {
-            root = new Node();
+            root = new treeNode();
             root.value = val;
             root.prev = null;
             root.next = null;
@@ -48,7 +58,7 @@ public class BinarySearchTree {
             {
                 if(p.next == null)
                 {
-                    p.next = new Node();
+                    p.next = new treeNode();
                     p.next.value = val;
                     p.next.next = null;
                     p.next.prev = null;
@@ -62,7 +72,7 @@ public class BinarySearchTree {
             {
                 if(p.prev == null)
                 {
-                    p.prev = new Node();
+                    p.prev = new treeNode();
                     p.prev.value = val;
                     p.prev.next = null;
                     p.prev.prev = null; 
@@ -74,7 +84,7 @@ public class BinarySearchTree {
             }
         }
     }
-    void inOrder(Node p)
+    void inOrder(treeNode p)
     {
         if(root == null)
         {
@@ -87,7 +97,7 @@ public class BinarySearchTree {
             inOrder(p.next);
         }
     }
-    void preOrder(Node p)
+    void preOrder(treeNode p)
     {
         if(root == null)
         {
@@ -100,7 +110,7 @@ public class BinarySearchTree {
             preOrder(p.next);
         }
     }
-    void postOrder(Node p)
+    void postOrder(treeNode p)
     {
         if(root == null)
         {

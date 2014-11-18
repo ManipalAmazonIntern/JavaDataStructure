@@ -20,9 +20,9 @@ public class MainClass {
         System.out.println();
         System.out.println("Testing DataStructure.LinkList");
         LinkList l1 = new LinkList();
-        l1.push_back(60,40,50,70,80,90,30,50);
+        l1.push_back(60,40,50,70,80,90,30,50,"Vivek");
         l1.show();
-        l1.push_front(1,2,3,4);
+        l1.push_front("STR",1,2,3,4);
         l1.show();
         Node temp = l1.root.next;
         l1.root.next = l1.root.next.next;
